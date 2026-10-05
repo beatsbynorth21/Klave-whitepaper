@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KLAVE Whitepaper</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF0F7;--ink:#14143A;--mute:#55577A;--accent:#2E2BFF;--panel:#FFFFFF;--line:#C9CCE3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10112B;--ink:#ECEEFF;--mute:#A3A6CF;--accent:#8E8CFF;--panel:#191A3D;--line:#34366B}}
+:root[data-theme="dark"]{--bg:#10112B;--ink:#ECEEFF;--mute:#A3A6CF;--accent:#8E8CFF;--panel:#191A3D;--line:#34366B}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 Newsreader,Georgia,serif}
+main{max-width:720px;margin:0 auto;padding:40px 22px 72px}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(3.2rem,16vw,6.5rem);font-weight:800;letter-spacing:-.04em;color:var(--accent)}
+.sub{font-size:1.35rem;margin:14px 0 6px;max-width:30ch}
+.meta{color:var(--mute);font-size:.95rem}
+h2{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;margin:56px 0 14px}
+h3{font-size:1.1rem;font-weight:500;margin:22px 0 4px}
+p{margin:0 0 14px;max-width:62ch}
+.quote{border-left:4px solid var(--accent);padding:4px 0 4px 16px;font-style:italic;font-size:1.2rem;margin:28px 0}
+.scroll{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:480px;background:var(--panel);font-size:.98rem}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
+th{font-family:'Bricolage Grotesque',sans-serif;font-weight:500}
+ul{padding-left:20px;margin:0 0 14px}li{margin-bottom:6px;max-width:62ch}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.stats div{background:var(--panel);padding:14px;border-top:3px solid var(--accent)}
+.stats b{display:block;font:800 2rem 'Bricolage Grotesque',sans-serif}
+.stats span{font-size:.9rem;color:var(--mute)}
+.fine{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);color:var(--mute);font-size:.88rem}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+<h1>KLAVE</h1>
+<p class="sub">The beat marketplace where every beat is made by a human.</p>
+<p class="meta">Whitepaper, draft v1 · October 2026 · A product of NORTHHHERN LABS</p>
+
+<h2>Abstract</h2>
+<p>KLAVE is an AI-powered marketplace where producers sell beats and artists find them. Producers keep more of what they earn the more they commit to the platform. Artists get beats verified as human-made. NERO, KLAVE's built-in assistant, helps both sides find the right sound and get around the app.</p>
+<p>KLAVE is built by a producer, for producers, and it is pre-launch. This paper explains what it does, how producers are paid, and where it goes next.</p>
+
+<h2>The problem</h2>
+<ul>
+<li><b>Producers lose too much.</b> Most beat platforms take a large share of every sale, and the cut rarely drops as a producer grows.</li>
+<li><b>Artists can't trust what they buy.</b> AI-generated tracks are flooding marketplaces, and buyers can't tell what a person actually made.</li>
+<li><b>Discovery is noisy.</b> Finding the right beat for a mood or a song idea means scrolling through thousands of near-identical listings.</li>
+<li><b>Emerging markets are underserved.</b> Many platforms and payment tools don't work well for producers in places like West Africa.</li>
+</ul>
+
+<h2>What KLAVE does</h2>
+<h3>100% human-made beats</h3>
+<p>KLAVE's position is simple: the beats are made by people. Producers go through a stem-upload verification flow, because someone who made a beat can show the parts it was built from. NERO also guides producers through the process in plain language.</p>
+<h3>Preview, then buy</h3>
+<p>Artists hear a preview of a beat instead of the full track. This stops anyone from screen-recording a complete beat and using it without paying. Free-tier beats get limited, watermarked previews.</p>
+<h3>Search that fits the song</h3>
+<p>Artists can browse by genre, follow producers, and use the Beat Mood Matcher to find beats by feel instead of keywords. Producers get an analytics dashboard and a shareable Producer Card.</p>
+<h3>Delivery</h3>
+<p>After payment, the artist receives the beat through an emailed download link.</p>
+
+<div class="quote">Fair pay for producers. Real beats for artists. No guessing which is which.</div>
+
+<h2>NERO, the assistant</h2>
+<p>NERO is KLAVE's AI assistant, powered by the Claude API. It helps producers with listings, pricing, and verification, and helps artists find beats. To keep it affordable at launch, NERO will route simple questions to cheaper models and apply message limits per plan, so it stays available without a runaway bill. NERO is currently in preview and opens to users after launch funding.</p>
+
+<h2>How producers earn</h2>
+<p>KLAVE's cut shrinks as producers commit more. A producer on the lifetime plan keeps every sale.</p>
+<div class="scroll"><table>
+<tr><th>Plan</th><th>Price</th><th>KLAVE's cut of each sale</th></tr>
+<tr><td>Free</td><td>$0</td><td>40%</td></tr>
+<tr><td>Plus</td><td>$7 / month</td><td>30%</td></tr>
+<tr><td>Pro</td><td>$25 / month</td><td>19%</td></tr>
+<tr><td>Lifetime</td><td>$299 once</td><td>0%</td></tr>
+</table></div>
+<p>The Free plan has an upload cap and no exclusive-rights pricing. Minimum prices apply to every plan: $5 for a non-exclusive license and $25 for exclusive rights, so beats don't get undercut into worthlessness. The lifetime plan is a single payment with no renewal.</p>
+
+<h2>Ambassador program</h2>
+<p>Anyone can become a KLAVE ambassador, not only producers or artists. Ambassadors earn a commission on sales from people they refer, and the rate rises with referrals.</p>
+<div class="scroll"><table>
+<tr><th>Referrals</th><th>Commission</th><th>Extra</th></tr>
+<tr><td>Start</td><td>5%</td><td></td></tr>
+<tr><td>5</td><td>10%</td><td>Early NERO access</td></tr>
+<tr><td>10</td><td>15%</td><td>Founding Ambassador badge</td></tr>
+</table></div>
+<p>Each ambassador's referral link uses their KLAVE username, and commissions are credited when a sale is confirmed. Payouts go to a verified bank account.</p>
+
+<h2>How it's built</h2>
+<ul>
+<li><b>App:</b> a lightweight web app hosted on Vercel, working in the phone browser.</li>
+<li><b>Accounts and data:</b> Firebase Authentication with email verification, and Firestore with security rules that enforce roles and price floors.</li>
+<li><b>Payments:</b> Paystack for recurring subscriptions and one-time purchases, with server-side payment verification. Flutterwave and Stripe are planned.</li>
+<li><b>Media:</b> Cloudinary through a signed-upload proxy.</li>
+<li><b>Security:</b> admin actions use server-verified claims, and bank details stay private to the server.</li>
+</ul>
+
+<h2>Where we are</h2>
+<div class="stats">
+<div><b>4</b><span>producers</span></div>
+<div><b>42</b><span>waitlist sign-ups</span></div>
+<div><b>15</b><span>app sign-ups</span></div>
+</div>
+<p>As of October 1, 2026, before public launch. Browsing, search, producer profiles, follows, the artist and producer account split, live subscription payments, and automated renewals and cancellations all work. The app lives at <a href="https://nero-ai.xyz">nero-ai.xyz</a>.</p>
+
+<h2>Roadmap</h2>
+<ul>
+<li><b>Now:</b> early funding round, company registration, and a laptop for the work phones can't do.</li>
+<li><b>Launch (target: before end of 2026):</b> custom domain emails so purchase receipts reach every buyer, NERO opens to users, and cover art upload plus more genres go in.</li>
+<li><b>After launch:</b> App Store and Play Store apps, more payment providers, and automatic ambassador payouts at scale.</li>
+</ul>
+
+<h2>Raising</h2>
+<p>KLAVE is raising $3,000 through SAFE agreements at an agreed price of $0.20 per share. The planned use of funds:</p>
+<div class="scroll"><table>
+<tr><th>Item</th><th>Estimate</th></tr>
+<tr><td>Laptop or mini computer (needed for app store submission)</td><td>$600</td></tr>
+<tr><td>Promotion budget</td><td>$1,120</td></tr>
+<tr><td>Domain management and API costs</td><td>$50</td></tr>
+<tr><td>Company registration</td><td>$30</td></tr>
+</table></div>
+
+<h2>Team</h2>
+<p>KLAVE is designed and built end to end by Benedict Patrick (Northhh), a producer and full stack developer, under NORTHHHERN LABS. The entire product was built from a phone.</p>
+
+<p class="fine">This document describes a product in development and is not an offer of securities or a guarantee of returns. Figures are estimates and may change.</p>
+</main>
+</body>
+</html>
